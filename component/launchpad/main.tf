@@ -18,10 +18,10 @@ terraform {
       source  = "hashicorp/tls"
       version = "~> 3.1.0"
     }
-    azurecaf = {
-      source  = "aztfmod/azurecaf"
-      version = "~> 1.2.0"
-    }
+    # azurecaf = {
+    #   source  = "aztfmod/azurecaf"
+    #   version = "~> 1.2.0"
+    # }
   }
   required_version = ">= 1.1.0"
 }
@@ -29,7 +29,7 @@ terraform {
 
 provider "azurerm" {
   # partner identifier for CAF Terraform landing zones.
-  partner_id = "ca4078f8-9bc4-471b-ab5b-3af6b86a42c8"
+  partner_id = "d40f4895-5a21-5612-aa15-69cd25571694"
   features {
     api_management {
       purge_soft_delete_on_destroy = var.provider_azurerm_features_api_management.purge_soft_delete_on_destroy
@@ -82,7 +82,7 @@ provider "azurerm" {
 }
 
 provider "azuread" {
-  partner_id = "ca4078f8-9bc4-471b-ab5b-3af6b86a42c8"
+  partner_id = "d40f4895-5a21-5612-aa15-69cd25571694"
 }
 
 

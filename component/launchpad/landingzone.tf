@@ -1,6 +1,7 @@
 module "launchpad" {
-  source = "../aztfmod"
-
+  //source = "../aztfmod"
+  source = "git::https://github.com/innofactororg/terraform-azure-iac.git?ref=main"
+  
   providers = {
     azurerm.vhub = azurerm.vhub
   }
