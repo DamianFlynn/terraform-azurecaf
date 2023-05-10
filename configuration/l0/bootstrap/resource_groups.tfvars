@@ -8,7 +8,7 @@ resource_groups = {
       service = "ACF State Management"
       environment = "Production"
       purpose =  "This resource is part of core infrastructure. Do not delete."
-    }  
+    }
   }
   level1 = {
     name = "p-iac-statelevel1"
@@ -49,14 +49,5 @@ resource_groups = {
       environment = "Production"
       purpose =  "This resource is part of core infrastructure. Do not delete."
     }
-  }
-  iac_network = {
-    name = "p-iac-network"
-    tags = {
-      workload = "ACF Platform"
-      service = "ACF State Management"
-      environment = "Production"
-      purpose =  "This resource is part of core infrastructure. Do not delete."
-    }    
   }
 }

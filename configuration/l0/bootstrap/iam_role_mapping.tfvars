@@ -11,34 +11,12 @@ role_mapping = {
           logged_in = {
             keys = ["user"]
           }
-          azuread_groups = {
-            keys = ["acf_platform_maintainers"]
-          }
-        }
-        "Key Vault Secrets User" = {
-          logged_in = {
-            keys = ["user"]
-          }
-          azuread_groups = {
-            keys = ["acf_platform_maintainers"]
-          }
         }
       }
       "level1" = {
         "Key Vault Secrets Officer" = {
           logged_in = {
             keys = ["user"]
-          }
-          azuread_groups = {
-            keys = ["acf_platform_maintainers"]
-          }
-        }
-        "Key Vault Secrets User" = {
-          logged_in = {
-            keys = ["user"]
-          }
-          azuread_groups = {
-            keys = ["acf_platform_maintainers"]
           }
         }
       }
@@ -47,17 +25,6 @@ role_mapping = {
           logged_in = {
             keys = ["user"]
           }
-          azuread_groups = {
-            keys = ["acf_platform_maintainers"]
-          }
-        }
-        "Key Vault Secrets User" = {
-          logged_in = {
-            keys = ["user"]
-          }
-          azuread_groups = {
-            keys = ["acf_platform_maintainers"]
-          }
         }
       }
       "level3" = {
@@ -65,34 +32,12 @@ role_mapping = {
           logged_in = {
             keys = ["user"]
           }
-          azuread_groups = {
-            keys = ["acf_platform_maintainers"]
-          }
-        }
-        "Key Vault Secrets User" = {
-          logged_in = {
-            keys = ["user"]
-          }
-          azuread_groups = {
-            keys = ["acf_platform_maintainers"]
-          }
         }
       }
       "level4" = {
         "Key Vault Secrets Officer" = {
           logged_in = {
             keys = ["user"]
-          }
-          azuread_groups = {
-            keys = ["acf_platform_maintainers"]
-          }
-        }
-        "Key Vault Secrets User" = {
-          logged_in = {
-            keys = ["user"]
-          }
-          azuread_groups = {
-            keys = ["acf_platform_maintainers"]
           }
         }
       }
