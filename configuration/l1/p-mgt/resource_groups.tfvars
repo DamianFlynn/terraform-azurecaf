@@ -9,4 +9,9 @@ resource_groups = {
     region      = "region1"
     description = "Management Automation"
   }
+  mgt_audit = {
+    name        = "p-mgt-audit"
+    region      = "region1"
+    description = "Management Auditing"
+  }
 }

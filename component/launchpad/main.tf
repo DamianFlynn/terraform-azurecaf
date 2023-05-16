@@ -27,9 +27,12 @@ terraform {
 }
 
 
-provider "azurerm" {
-  # partner identifier for CAF Terraform landing zones.
+provider "azuread" {
   partner_id = "d40f4895-5a21-5612-aa15-69cd25571694"
+}
+provider "azurerm" {
+  partner_id = "d40f4895-5a21-5612-aa15-69cd25571694"
+  # partner identifier for CAF Terraform landing zones.
   features {
     api_management {
       purge_soft_delete_on_destroy = var.provider_azurerm_features_api_management.purge_soft_delete_on_destroy
@@ -81,10 +84,7 @@ provider "azurerm" {
   tenant_id       = local.connectivity_tenant_id
 }
 
-provider "azuread" {
-  partner_id = "d40f4895-5a21-5612-aa15-69cd25571694"
-}
-
+data "azurerm_client_config" "current" {}
 
 resource "random_string" "prefix" {
   count   = var.prefix == null ? 1 : 0
@@ -101,6 +101,11 @@ locals {
 
   tags = merge(local.global_settings.tags, local.landingzone_tag, { "level" = var.landingzone.level }, { "environment" = local.global_settings.environment }, { "rover_version" = var.rover_version }, var.tags)
 
+  tfstates = tomap(
+    {
+      (var.landingzone.key) = local.backend[var.landingzone.backend_type]
+    }
+  )
   global_settings = {
     default_region     = var.default_region
     environment        = var.environment
@@ -115,11 +120,6 @@ locals {
     use_slug           = var.use_slug
   }
 
-  tfstates = tomap(
-    {
-      (var.landingzone.key) = local.backend[var.landingzone.backend_type]
-    }
-  )
 
   backend = {
     azurerm = {
@@ -141,5 +141,3 @@ locals {
   }
 
 }
-
-data "azurerm_client_config" "current" {}

@@ -5,6 +5,38 @@ diagnostic_log_analytics = {
     name               = "p-mgt-logs-ws"
 
     solutions_maps = {
+      AzureActivity = {
+        "publisher" = "Microsoft"
+        "product"   = "OMSGallery/AzureActivity"
+      },
+      ChangeTracking = {
+        "publisher" = "Microsoft"
+        "product"   = "OMSGallery/ChangeTracking"
+      },
+      InfrastructureInsights = {
+        "publisher" = "Microsoft"
+        "product"   = "OMSGallery/InfrastructureInsights"
+      },
+      KeyVaultAnalytics = {
+        "publisher" = "Microsoft"
+        "product"   = "OMSGallery/KeyVaultAnalytics"
+      },
+      ServiceMap = {
+        "publisher" = "Microsoft"
+        "product"   = "OMSGallery/ServiceMap"
+      }
+      Updates = {
+        "publisher" = "Microsoft"
+        "product": "OMSGallery/Updates"
+      }
+      VMInsights = {
+        "publisher" = "Microsoft"
+        "product": "OMSGallery/VMInsights"
+      }
+      Security = {
+        "publisher" = "Microsoft"
+        "product"   = "OMSGallery/Security"
+      }
       NetworkMonitoring = {
         "publisher" = "Microsoft"
         "product"   = "OMSGallery/NetworkMonitoring"
@@ -28,11 +60,8 @@ diagnostic_log_analytics = {
       ContainerInsights = {
         "publisher" = "Microsoft"
         "product"   = "OMSGallery/ContainerInsights"
-      },
-      KeyVaultAnalytics = {
-        "publisher" = "Microsoft"
-        "product"   = "OMSGallery/KeyVaultAnalytics"
       }
+
     }
 
   }

@@ -6,7 +6,6 @@ resource_groups = {
       level = "level0"
       workload = "ACF Platform"
       service = "ACF State Management"
-      environment = "Production"
       purpose =  "This resource is part of core infrastructure. Do not delete."
     }
   }
@@ -16,7 +15,6 @@ resource_groups = {
       level = "level1"
       workload = "ACF Platform"
       service = "ACF State Management"
-      environment = "Production"
       purpose =  "This resource is part of core infrastructure. Do not delete."
     }
   }
@@ -26,7 +24,6 @@ resource_groups = {
       level = "level2"
       workload = "ACF Platform"
       service = "ACF State Management"
-      environment = "Production"
       purpose =  "This resource is part of core infrastructure. Do not delete."
     }
   }
@@ -36,7 +33,6 @@ resource_groups = {
       level = "level3"
       workload = "ACF Platform"
       service = "ACF State Management"
-      environment = "Production"
       purpose =  "This resource is part of core infrastructure. Do not delete."
     }
   }
@@ -46,8 +42,15 @@ resource_groups = {
       level = "level4"
       workload = "ACF Platform"
       service = "ACF State Management"
-      environment = "Production"
       purpose =  "This resource is part of core infrastructure. Do not delete."
     }
+  }
+  iac_network = {
+    name = "p-iac-network"
+    tags = {
+      workload = "ACF Platform"
+      service = "ACF State Management"
+      purpose =  "This resource is part of core infrastructure. Do not delete."
+    }    
   }
 }
