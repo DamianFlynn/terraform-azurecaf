@@ -1,5 +1,5 @@
 vnets = {
-  adds_network = {
+  adds_region1_vnet = {
     resource_group_key = "adds_network"
     vnet = {
       name          = "p-we1dc-network-vnet"

@@ -31,8 +31,8 @@ Deploy the management services
 
 
 ```bash
-rover \
-  -lz /tf/caf/framework/component/workloads/  \
+rover \                         
+  -lz /tf/caf/framework/component/landingzone/  \
   -var-folder /tf/caf/framework/configuration/l3/aks/ \
   -tfstate_subscription_id 6bf8037f-4ed7-4adf-b1a3-e09efbcc2b3c \
   -target_subscription cb588293-abc4-4363-ba1f-a7e5bce2a0c4 \
@@ -47,12 +47,28 @@ rover \
 ## Architecture
 
 * Subscriptions
-  * resource Groups: p-we1dc
-    * Keyvault: p-we1dc-20230323-kv
-    * Virtual Machine: p-we1dc-adds-01
-      * NIC
-      * OSDisk
-  * resource Groups: p-we1dc-network
-    * virtual network: p-we1dc-network-vnet
-      * subnet: frontend
+  * resource Groups: p-we1k8s
+  * resource Groups: p-we1k8s-network
+    * virtual Network: p-we1k8s-network-vnet
+      - address_space 10.128.48.0/22
+      - subnets 
+        - NodepoolSystem
+          cidr    = ["10.128.48.0/24"]
+          nsg_key = "azure_kubernetes_cluster_nsg"
+        - NodepoolUser1
+          cidr    = ["10.128.49.0/24"]
+          nsg_key = "azure_kubernetes_cluster_nsg"
+        - NodepoolUser2
+          cidr    = ["10.128.50.0/24"]
+          nsg_key = "azure_kubernetes_cluster_nsg"
+        - PrivateEndpointsSubnet
+          cidr                                           = ["10.128.51.0/27"]
+          enforce_private_link_endpoint_network_policies = true
+        - AzureBastionSubnet
+          cidr    = ["10.128.51.64/27"]
+          nsg_key = "azure_bastion_nsg"
+        - JumpboxSubnet
+          cidr    = ["10.128.51.128/27"]
+          nsg_key = "azure_bastion_nsg"
+      
 

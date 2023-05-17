@@ -9,5 +9,13 @@ resource_groups = {
     region      = "region1"
     description = "Resource Group for the vNET, hosting the AKS"
   }
+  aks_jumpbox = {
+    name        = "p-we1k8s-jump"
+    region      = "region1"
+    description = "Resource Group for a Jumpbox"
+    tags = {
+      public_exposure = "portal"
+    }
+  }
 
 }

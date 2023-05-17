@@ -31,7 +31,7 @@ Deploy the management services
 
 ```bash
 rover \
-  -lz /tf/caf/framework/component/workloads/  \
+  -lz /tf/caf/framework/component/landingzone/  \
   -var-folder /tf/caf/framework/configuration/l3/adds-vm-landingzone/ \
   -tfstate_subscription_id 6bf8037f-4ed7-4adf-b1a3-e09efbcc2b3c \
   -target_subscription 64d70783-7575-40fb-837f-3aded0db5edb \

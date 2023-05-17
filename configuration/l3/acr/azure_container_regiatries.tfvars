@@ -6,6 +6,15 @@ azure_container_registries = {
 
     #public_network_access_enabled = "false" #Only able to control when sku = "premium"
 
+    # diagnostic_profiles = {
+    #   operations = {
+    #     name             = "acr_logs"
+    #     definition_key   = "azure_container_registry"
+    #     destination_type = "log_analytics"
+    #     destination_key  = "central_logs"
+    #   }
+    # }
+
     georeplications = {
       region2 = {
         tags = {
@@ -39,6 +48,7 @@ azure_container_registries = {
     }
 
     private_endpoints = {
+      # This needs to be using the main DNS so node pools can resolve the address
       acr_region1_jumphost = {
         name               = "acr-region1-private-link"
         resource_group_key = "acr_region1_vnet"
@@ -50,6 +60,7 @@ azure_container_registries = {
           subresource_names    = ["registry"]
         }
       }
+
     }
   }
 

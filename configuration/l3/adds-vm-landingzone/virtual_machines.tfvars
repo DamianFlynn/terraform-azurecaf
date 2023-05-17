@@ -5,11 +5,13 @@ virtual_machines = {
   adds_dc1 = {
     resource_group_key = "adds"
     provision_vm_agent = true
+
+    os_type = "windows"
+
     # when boot_diagnostics_storage_account_key is empty string "", boot diagnostics will be put on azure managed storage
     # when boot_diagnostics_storage_account_key is a non-empty string, it needs to point to the key of a user managed storage defined in diagnostic_storage_accounts
     # if boot_diagnostics_storage_account_key is not defined, but global_settings.resource_defaults.virtual_machines.use_azmanaged_storage_for_boot_diagnostics is true, boot diagnostics will be put on azure managed storage
 
-    os_type = "windows"
 
     # the auto-generated ssh key in keyvault secret. Secret name being {VM name}-ssh-public and {VM name}-ssh-private
     keyvault_key = "adds_keyvault"
@@ -18,18 +20,27 @@ virtual_machines = {
     networking_interfaces = {
       nic0 = {
         # Value of the keys from networking.tfvars
-        vnet_key                 = "adds_network"
+        vnet_key                 = "adds_region1_vnet"
         subnet_key              = "frontend"
         name                    = "p-we1dc-adds01-nic0"
         enable_ip_forwarding    = false
         internal_dns_name_label = "p-we1dc-adds01"
+
+        # you can setup up to 5 profiles
+        # diagnostic_profiles = {
+        #   operations = {
+        #     definition_key   = "nic"
+        #     destination_type = "log_analytics"
+        #     destination_key  = "central_logs"
+        #   }
+        # }
+
       }
     }
 
     virtual_machine_settings = {
       windows = {
         name = "p-we1dc-adds01"
-        #size = "Standard_B2s"
         size = "Standard_D1_v2"
         #zone = "1"
 
@@ -44,7 +55,7 @@ virtual_machines = {
         network_interface_keys = ["nic0"]
 
         os_disk = {
-          name                 = "p-we1dc-adds01-os"
+          name                 = "p-we1dc-adds01-os-disk"
           caching              = "ReadWrite"
           storage_account_type = "Standard_LRS"
           managed_disk_type    = "StandardSSD_LRS"

@@ -1,5 +1,5 @@
 vnets = {
-  aks_vnet = {
+  aks_region1_vnet = {
     resource_group_key = "aks_vnet"
     region             = "region1"
     vnet = {
