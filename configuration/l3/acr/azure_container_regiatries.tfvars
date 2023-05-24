@@ -1,10 +1,16 @@
 azure_container_registries = {
-  acr_region11 = {
+  acr_region1 = {
     name               = "p-we1acr-pwr-cr"
     resource_group_key = "acr_region1"
     sku                = "Premium"
 
-    #public_network_access_enabled = "false" #Only able to control when sku = "premium"
+    admin_enabled = "false"
+    quarantine_policy_enabled = "false"
+    trust_policy_enabled = "false"
+
+    public_network_access_enabled = "false" #Only able to control when sku = "premium"
+    data_endpoint_enabled = "true"
+    network_rule_bypass_option = "AzureServices"
 
     # diagnostic_profiles = {
     #   operations = {
@@ -14,6 +20,11 @@ azure_container_registries = {
     #     destination_key  = "central_logs"
     #   }
     # }
+
+    retention_policy = {
+      enable = true
+      days = 15
+    }
 
     georeplications = {
       region2 = {
@@ -61,6 +72,19 @@ azure_container_registries = {
         }
       }
 
+      // Expose Azure Container Registry via Private Link, into the cluster nodes virtual network.
+      # acr_region1_aks = {
+      #   name               = "acr-region1-aks-private-link"
+      #   resource_group_key = "aks_region1_vnet"
+      #   vnet_key           = "aks_region1_vnet"
+      #   subnet_key         = "jumpbox_subnet"
+      #   lz_key             = ""
+      #   private_service_connection = {
+      #     name                 = "acr-private-link"
+      #     is_manual_connection = false
+      #     subresource_names    = ["registry"]
+      #   }
+      # }
     }
   }
 

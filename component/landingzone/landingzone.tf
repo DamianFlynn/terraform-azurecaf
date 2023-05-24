@@ -1,6 +1,6 @@
 module "solution" {
   # source = "../aztfmod"
-  source = "git::https://github.com/innofactororg/terraform-azure-iac.git?ref=main"
+  source = "git::https://github.com/innofactororg/terraform-azure-iac.git?ref=fix-azurerm-355"
 
   providers = {
     azurerm.vhub = azurerm.vhub

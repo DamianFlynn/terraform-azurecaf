@@ -8,5 +8,9 @@ landingzone = {
       level   = "lower"
       tfstate = "net-hub-region1.tfstate"
     }
+    acr-region1 = {
+      level   = "current"
+      tfstate = "acr-region1.tfstate"
+    }
   }
 }

@@ -1,8 +1,8 @@
 diagnostic_log_analytics = {
   mgt_logs = {
+    name               = "p-mgt-logs-ws"
     region             = "region1"
     resource_group_key = "mgt_logs"
-    name               = "p-mgt-logs-ws"
 
     solutions_maps = {
       AzureActivity = {
