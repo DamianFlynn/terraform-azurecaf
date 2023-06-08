@@ -22,7 +22,7 @@ Deploy the management services
 
 ```bash
 rover \
-  -lz /tf/caf/framework/component/workloads/  \
+  -lz /tf/caf/framework/component/landingzone/  \
   -var-folder /tf/caf/framework/configuration/l2/p-rg1net-hub/ \
   -tfstate_subscription_id 6bf8037f-4ed7-4adf-b1a3-e09efbcc2b3c \
   -target_subscription cc75f06b-5371-40fd-82fd-fe292f7af666 \
