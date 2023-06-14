@@ -1,14 +1,15 @@
 resource_groups = {
-  adds = {
-    name = "p-we1dc"
+  spoke = {
+    name = "t-rg1spoke"
     tags = {
       env = "standalone"
     }
   }
-  adds_network = {
-    name = "p-we1dc-network"
+  spoke_network = {
+    name = "t-rg1spoke-network"
     tags = {
       env = "standalone"
     }
+    lock_resource = false
   }
 }

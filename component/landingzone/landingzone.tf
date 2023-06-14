@@ -1,6 +1,6 @@
 module "solution" {
   # source = "../aztfmod"
-  source = "git::https://github.com/innofactororg/terraform-azure-iac.git?ref=fix-azurerm-355"
+  source = "git::https://github.com/innofactororg/terraform-azure-iac.git?ref=fix-azurerm-355-devcenter"
 
   providers = {
     azurerm.vhub = azurerm.vhub
@@ -16,6 +16,7 @@ module "solution" {
   data_factory                          = local.data_factory
   database                              = local.database
   data_protection                       = local.data_protection
+  devcenter                             = local.devcenter
   diagnostic_storage_accounts           = var.diagnostic_storage_accounts
   diagnostics_definition                = var.diagnostics_definition
   diagnostics_destinations              = var.diagnostics_destinations

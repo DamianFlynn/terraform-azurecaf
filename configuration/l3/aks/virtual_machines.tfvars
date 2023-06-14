@@ -68,7 +68,7 @@ virtual_machines = {
         source_image_reference = {
           publisher = "Canonical"
           offer     = "UbuntuServer"
-          sku       = "18.04-LTS"
+          sku       = "22_04-LTS"
           version   = "latest"
         }
 

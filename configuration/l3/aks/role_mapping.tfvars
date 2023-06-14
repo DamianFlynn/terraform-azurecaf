@@ -30,5 +30,34 @@ role_mapping = {
         }
       }
     }
+
+    networking = {
+      # AKS Cluster needs permission to connect to the node pool network
+      aks_region1_vnet = {
+        "Contributor" = {
+          managed_identities = {
+            keys = ["aks_region1_custer"]
+          }
+          # azuread_service_principals = {
+          #   keys = ["sp1"]
+          # }
+          # object_ids = {
+          #   keys = ["004c3094-aa2e-47f3-87aa-f82a155ada54"]
+          # }
+        }
+      }
+    }
+
+    # virtual_subnets = {
+    #   # subcription level access
+    #   subnet1 = {
+    #     "Contributor" = {
+    #       managed_identities = {
+    #         keys = ["aks_region1_custer"]
+    #       }
+    #     }
+    #   }
+    # }
+
   }
 }
