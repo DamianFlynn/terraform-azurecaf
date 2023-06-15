@@ -7,7 +7,7 @@ role_mapping = {
       aks_region1_custer = {
         "Azure Kubernetes Service RBAC Cluster Admin" = {
           # azuread_groups = {
-          #   keys = ["aks_admins"]
+          #   keys = ["aks_cluster_admins"]
           # }
           logged_in = {
             keys = ["user"]
